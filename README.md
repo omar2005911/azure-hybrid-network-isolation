@@ -29,6 +29,7 @@ The core infrastructure is modeled around an optimized **Hub-and-Spoke Topology*
                               │
                  [ Internal Load Balancer ] (10.1.0.6)
                          ┌────┴────┐
+                        
                          ▼         ▼
                     [Web-VM01] [Web-VM02]
 
