@@ -29,9 +29,9 @@ The core infrastructure is modeled around an optimized **Hub-and-Spoke Topology*
                               │
                  [ Internal Load Balancer ] (10.1.0.6)
                          ┌────┴────┐
-                        
                          ▼         ▼
                     [Web-VM01] [Web-VM02]
+
 
 ### 1. Hybrid Connectivity Sub-system (S2S IPsec VPN)
 * **Cross-Premises Integration:** Established a secure, encrypted bi-directional connection between the simulated **On-Premises VNet** (`192.168.0.0/16`) and the **Azure Core Hub VNet** (`10.0.0.0/16`).
