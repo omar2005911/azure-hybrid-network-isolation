@@ -7,30 +7,30 @@ The architecture demonstrates a high-security deployment featuring an encrypted 
 
 ---
 
-## 📐 Architectural Design & Infrastructure Layout
-
 The core infrastructure is modeled around an optimized **Hub-and-Spoke Topology** designed to isolate distinct business compliance zones:
-[ On-Premises Datacenter ]
-                       (192.168.0.0/16)
-                              │
-                   [Virtual Network Gateway]
-                              │
-                       (IPsec S2S Tunnel)
-                              │
-                   [Virtual Network Gateway]
-                              │
-                     [ Azure Hub VNet ]
-                       (10.0.0.0/16)
-                              │
-                 (VNet Peering - No Transit)
-                              │
-                    [ Azure Spoke VNet ]
-                       (10.1.0.0/16)
-                              │
-                 [ Internal Load Balancer ] (10.1.0.6)
-                         ┌────┴────┐
-                         ▼         ▼
-                    [Web-VM01] [Web-VM02]
+
+```text
+                      [ On-Premises Datacenter ]
+                           (192.168.0.0/16)
+                                  │
+                       [Virtual Network Gateway]
+                                  │
+                           (IPsec S2S Tunnel)
+                                  │
+                       [Virtual Network Gateway]
+                                  │
+                         [ Azure Hub VNet ]
+                           (10.0.0.0/16)
+                                  │
+                     (VNet Peering - No Transit)
+                                  │
+                        [ Azure Spoke VNet ]
+                           (10.1.0.0/16)
+                                  │
+                     [ Internal Load Balancer ] (10.1.0.6)
+                             ┌────┴────┐
+                             ▼         ▼
+                        [Web-VM01] [Web-VM02]
 
 
 ### 1. Hybrid Connectivity Sub-system (S2S IPsec VPN)
